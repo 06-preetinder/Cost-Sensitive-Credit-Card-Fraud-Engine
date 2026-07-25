@@ -1,7 +1,7 @@
 <div align="center">
 
 # 💳 Cost-Sensitive Credit Card Fraud Engine
-### *Translating Machine Learning Probabilities into Direct Dollar Business Metrics*
+### *Translating Machine Learning Probabilities into Direct Financial Business Value*
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
@@ -32,3 +32,15 @@ Rather than treating all classification errors equally, this model evaluates pre
 | **False Positive (FP)** | False Alarm | **$10.00** — Fixed Verification/Friction Cost |
 | **True Positive (TP)** | Fraud Stopped | **$10.00** — Fixed Verification Cost |
 | **True Negative (TN)** | Clean Transaction | **$0.00** — Approved |
+
+```text
+                ┌──────────────────────────────────────────────┐
+                │        Custom Financial Loss Function        │
+                ├──────────────────────────────────────────────┤
+                │  Loss = Σ (FN × Amount) + Σ (FP × $10.00)    │
+                └──────────────────────────────────────────────┘
+
+├── train.py                     # End-to-end model pipeline & threshold optimizer
+├── app.py                       # Streamlit interactive decision interface
+├── fraud_detection_model.joblib # Serialized pipeline + optimal threshold metadata
+└── requirements.txt             # Production dependencies
